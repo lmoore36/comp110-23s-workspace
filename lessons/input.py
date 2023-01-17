@@ -1,3 +1,3 @@
 """Demonstrates asking the user for input."""
 
-input("What is your name? ")
+print("Hello! Good Morning." + input("What is your name? "))
