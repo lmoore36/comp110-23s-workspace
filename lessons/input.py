@@ -1,3 +1,6 @@
 """Demonstrates asking the user for input."""
 
-print("Hello, " + input("What is your name? ") + " good morning!")
+user_name: str = input("What is your name?")
+print("Hello " + user_name + ", good morning!")
+print ("You are the best prgrammer ever, " + user_name)
+
