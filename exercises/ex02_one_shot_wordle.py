@@ -1,4 +1,4 @@
-"""EX02 - One Shot Wordle - Loops!"""
+"""EX02 - One Shot Wordle - Loops"""
 
 __author__= "730556876"
 
