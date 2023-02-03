@@ -1,9 +1,9 @@
-"""EX02 - One Shot Wordle - Loops"""
+"""EX02 - One Shot Wordle - Loops!"""
 
-__author__= "730556876"
+__author__ = "730556876"
 
-secret_word: str = "knoll"
-guess: str = input ("What is your " + str(len(secret_word)) + "-letter guess? ")
+secret_word: str = "python"
+guess: str = input("What is your " + str(len(secret_word)) + "-letter guess? ")
 
 g_idx: int = 0
 s_idx: int = 0
@@ -13,7 +13,7 @@ white_box: str = "\U00002B1C"
 yellow_box: str = "\U0001F7E8"
 
 while len(guess) != len(secret_word):
-    guess: str = input ("That was not " + str(len(secret_word)) + " letters! Try again: ")
+    guess = input("That was not " + str(len(secret_word)) + " letters! Try again: ")
 
 result_string: str = ""
 
@@ -27,7 +27,7 @@ while g_idx < len(guess):
             if guess[g_idx] == secret_word[s_idx]:
                 letter = True
             s_idx = s_idx + 1
-        if letter == True:
+        if (letter == True):
             result_string += yellow_box
         else:
             result_string += white_box
