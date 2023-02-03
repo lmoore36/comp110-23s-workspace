@@ -27,7 +27,7 @@ while g_idx < len(guess):
             if guess[g_idx] == secret_word[s_idx]:
                 letter = True
             s_idx = s_idx + 1
-        if (letter == True):
+        if letter:
             result_string += yellow_box
         else:
             result_string += white_box
