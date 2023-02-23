@@ -2,7 +2,7 @@
 
 __author__ = "730556876"
 
-def contains_char(guess_word: str, single_letter: str) -> bool:
+def contains_char(guess_word, single_letter) -> bool:
     """Searches each word for the guessed lettter"""
     assert len(single_letter) == 1
     guess_idx: int = 0
@@ -12,7 +12,7 @@ def contains_char(guess_word: str, single_letter: str) -> bool:
         guess_idx = guess_idx + 1
     return False
 
-def emojified (guess_word: str, secret_word: str) -> str:
+def emojified (guess_word, secret_word) -> str:
     """Returns a color coded score for each letter"""
     assert len(guess_word) == len(secret_word)
    
@@ -34,7 +34,7 @@ def emojified (guess_word: str, secret_word: str) -> str:
         guess_idx = guess_idx + 1
     return result_string
 
-def input_guess(expected_length: int) -> str:
+def input_guess(expected_length) -> str:
     guess_word: str = input("Enter a " + str(expected_length) + " character word:")
     while len(guess_word) != expected_length:
         guess_word = input("That wasn't " + str(expected_length) + " chars! Try again:")
@@ -43,7 +43,7 @@ def input_guess(expected_length: int) -> str:
 def main() -> None:
     """The entrypoint of the program and main game loop."""
     
-    secret_word: str = "julia"
+    secret_word: str = "codes"
     turn_number: int = 1
 
     while turn_number <= 6:
