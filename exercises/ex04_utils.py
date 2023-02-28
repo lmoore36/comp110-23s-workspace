@@ -8,5 +8,3 @@ def all(list: list[int], int: int) -> bool:
     while list_idx < len(list):
         if list[list_idx] != int:
            return False
-        list_idx += 1 
-    return True
