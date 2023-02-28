@@ -2,11 +2,11 @@
 
 __author__ = "730556876"
 
-def all(num_list: list[int], example_int: int) -> bool:
+def all(list: list[int], int: int) -> bool:
     """Searches number list for the example integer"""
     list_idx = 0
-    while list_idx < len(num_list):
-        if num_list[list_idx] == example_int:
-            return True
+    while list[list_idx] == int:
         list_idx += 1
+        if list[len(list)-1] == int:
+            return True
     return False
