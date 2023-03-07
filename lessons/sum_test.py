@@ -1,4 +1,4 @@
-""""unit test for sun function"""
+""""unit test for sum function"""
 
 from lessons.sum import sum
 
