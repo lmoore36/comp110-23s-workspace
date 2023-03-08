@@ -12,14 +12,13 @@ def only_evens(numbers: list[int]) -> int:
 
 def concat(list1: list[int], list2: list[int]) -> int:
     """Returns numbers that appear in both lists"""
-    list1.append(list2)
-    return list1
+    final_list: list[int] = list1 + list2
+    return final_list
 
 def sub(list: list[int], idx1: int, idx2: int) -> int:
-    range_list: list[int] = []
-    for x in range(idx1, idx2):
-        range_list.append(x)
-    return range_list
+    idx2 = idx2 - 1
+    for list in range(list[idx1], list[idx2]):
+        return list
 
 
       
