@@ -40,3 +40,15 @@ def test_sub_use() -> None:
     idx1: int = 1
     idx2: int = 3
     assert sub(test_list, idx1, idx2) == [20, 30]
+
+def test_sub_edge1() -> None:
+    test_list: list[int] = [10, 20, 30, 40]
+    idx1: int = 1
+    idx2: int = 5
+    assert sub(test_list, idx1, idx2) == [20, 30, 40]
+
+def test_sub_edge2() -> None:
+    test_list: list[int] = [10, 20, 30, 40]
+    idx1: int = -1
+    idx2: int = 3
+    assert sub(test_list, idx1, idx2) == [10, 20, 30]

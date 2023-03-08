@@ -1,9 +1,9 @@
-"""Docstring"""
+"""Utils functions."""
 
 __author__ = "730556876"
 
 def only_evens(numbers: list[int]) -> int:
-    """Return even numbers from a list"""
+    """Returns even numbers from a list."""
     evens: list[int] = []
     for x in numbers:
         if x % 2 == 0:
@@ -11,15 +11,24 @@ def only_evens(numbers: list[int]) -> int:
     return evens
 
 def concat(list1: list[int], list2: list[int]) -> int:
-    """Returns numbers that appear in both lists"""
+    """Adds two lists together."""
     final_list: list[int] = list1 + list2
     return final_list
 
 def sub(list: list[int], idx1: int, idx2: int) -> int:
-    idx2 = idx2 - 1
-    for list in range(list[idx1], list[idx2]):
-        return list
+    """Subsets a list within a range."""
+    if idx1 < 0:
+        idx1 = 0
+    
+    if idx2 > len(list):
+        idx2 = len(list)
+    
+    subset_list: list[int] = []
 
+    while idx1 < idx2:
+        subset_list.append(list[idx1])
+        idx1 += 1
+    return subset_list
 
       
 
