@@ -31,7 +31,7 @@ def main() -> None:
         print("2. Take South Campus Quiz")
         print("3. Graduate")
 
-        choice: int = int(input("Type 1, 2, or 3.\n"))
+        choice = int(input("Type 1, 2, or 3.\n"))
 
         if choice == 1:
             north_campus()
@@ -102,7 +102,7 @@ def do_quiz(quiz_data: list[dict]) -> int:
         for i in range(len(shuffled_answers)):
             print(f"{i+1}. {shuffled_answers[i]}")
 
-        player_answer: int = int(input("Choose your answer.\n"))
+        player_answer = int(input("Choose your answer.\n"))
 
         if shuffled_answers[player_answer - 1] == correct_answer:
             quiz_points += 1
