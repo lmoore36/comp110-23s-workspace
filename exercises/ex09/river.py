@@ -60,8 +60,9 @@ class River:
         return None
     
     def view_river(self):
+        pretty_fish: str = __str__(self.fish)
         print(f"~~~ Day {self.day}: ~~~")
-        print(f"Fish Population: {self.fish}")
+        print(f"Fish Population: {pretty_fish}")
         print(f"Bear Population: {self.bears}")
         return None
             
@@ -98,3 +99,6 @@ class River:
         self.one_river_day()
         self.one_river_day()
         return None
+    
+    def __str__(self) -> str:
+        return f"[{self.bears}, {Bear.age}]"
