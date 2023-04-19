@@ -1,19 +1,19 @@
 """File to define River class"""
 
-from exercises.ex09.fish import Fish
-from exercises.ex09.bear import Bear
+from fish import Fish
+from bear import Bear
 
 class River:
     
     day: int
-    bears: list
-    fish: list
+    bears: list[Bear]
+    fish: list[Fish]
 
     def __init__(self, num_fish: int, num_bears:int):
         """New River with num_fish Fish and num_bears Bears"""
         self.day: int = 0
-        self.fish: list[Fish] = []
-        self.bears: list[Bear] = []
+        self.fish: list[Fish] = [num_fish]
+        self.bears: list[str(Bear)] = [num_bears]
         # populate the river with fish and bears
         for x in range(0, num_fish):
             self.fish.append(Fish())
