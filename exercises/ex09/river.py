@@ -12,13 +12,13 @@ class River:
     def __init__(self, num_fish: int, num_bears:int):
         """New River with num_fish Fish and num_bears Bears"""
         self.day: int = 0
-        self.fish: list[Fish] = [num_fish]
-        self.bears: list[str(Bear)] = [num_bears]
+        self.fish: list[Fish] = num_fish
+        self.bears: list[Bear] = num_bears
         # populate the river with fish and bears
-        for x in range(0, num_fish):
-            self.fish.append(Fish())
-        for x in range(0, num_bears):
-            self.bears.append(Bear())
+        #for x in range(0, num_fish):
+            #self.fish.append(Fish())
+        #for x in range(0, num_bears):
+            #self.bears.append(Bear())
 
     def check_ages(self):
         return None
@@ -64,3 +64,13 @@ class River:
         # Visualize River
         self.view_river()
             
+    def one_river_week(self):
+        """Calls one_river_day for a whole week."""
+        self.one_river_day()
+        self.one_river_day()
+        self.one_river_day()
+        self.one_river_day()
+        self.one_river_day()
+        self.one_river_day()
+        self.one_river_day()
+        return None
