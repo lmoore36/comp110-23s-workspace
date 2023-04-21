@@ -35,13 +35,13 @@ class River:
         bears_list = self.bears
         fish_list = self.fish
         
-        for x in fish_list: 
-            if Fish.age > 3:
-                fish_list.pop(x)
+        for x in self.fish: 
+            if x.age > 3:
+                self.fish.remove(x)
         
         for y in bears_list:
-            if Bear.age > 5:
-                bears_list.pop(y)
+            if y.age > 5:
+                bears_list.remove(y)
 
         self.bears = bears_list
         self.fish = fish_list
@@ -72,8 +72,8 @@ class River:
         starving_bears_list = self.bears
 
         for x in starving_bears_list:
-            if Bear.hunger_score < 0:
-                starving_bears_list.pop(x)
+            if x.hunger_score < 0:
+                starving_bears_list.remove(x)
 
         self.bears = starving_bears_list
         return None
@@ -93,7 +93,7 @@ class River:
     def repopulate_fish(self):
         """Repopulates bears."""
         adult_fish: int = len(self.fish)
-        baby_fish: int = ((adult_fish//2) * 4)
+        baby_fish: int = ((adult_fish // 2) * 4)
         y: int = 1
         
         for fish in self.fish:
