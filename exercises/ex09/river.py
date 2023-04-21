@@ -76,13 +76,13 @@ class River:
         
     def repopulate_bears(self):
         """Repopulates fish."""
-        n: int = len(self.bears)
-        x: int = n // 2
-        y: int = 0
+        adult_bears: int = len(self.bears)
+        baby_bears: int = adult_bears // 2
+        y: int = 1
         
-        while y <= x: 
-            for animal in self.bears:
-                self.bears.append(animal)
+        for bear in self.bears:
+            while y <= baby_bears: 
+                self.bears.append(bear)
                 y += 1
         return None
 
@@ -90,13 +90,12 @@ class River:
         """Repopulates bears."""
         adult_fish: int = len(self.fish)
         baby_fish: int = ((adult_fish//2) * 4)
-        y: int = 0
+        y: int = 1
         
-        while y <= adult_fish: 
-            for animal in self.fish:
-                self.fish.append(animal)
+        for fish in self.fish:
+            while y <= baby_fish: 
+                self.fish.append(fish)
                 y += 1
-                print(len(self.fish))
         return None
 
     def view_river(self,):
