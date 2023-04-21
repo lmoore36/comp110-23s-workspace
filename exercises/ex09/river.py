@@ -2,17 +2,16 @@
 
 __author__ = "730556876"
 
-from exercises.ex09.fish import Fish
-from exercises.ex09.bear import Bear
+from fish import Fish
+from bear import Bear
 
 
 class River:
-    """River class definition"""
+    """River class definition."""
 
     day: int
     bears: list[Bear]
     fish: list[Fish]
-
 
     def __init__(self, num_fish: int, num_bears: int):
         """New River with num_fish Fish and num_bears Bears."""
@@ -25,9 +24,8 @@ class River:
         for x in range(0, num_bears):
             self.bears.append(Bear())
 
-
     def check_ages(self):
-        """Checks the ages of river animals"""
+        """Checks the ages of river animals."""
         bears_list: list[Bear] = []
         fish_list: list[Fish] = []
 
@@ -47,7 +45,6 @@ class River:
 
         return None
 
-
     def remove_fish(self, amount: int):
         """Removes an X number of fish from the lake."""
         x: int = 0
@@ -55,63 +52,54 @@ class River:
         while x < amount:
             self.fish.pop(x)
             x += 1
-        print(self.fish)
         
         return None
-    
 
     def bears_eating(self):
-        """Simulates bears eating"""
+        """Simulates bears eating."""
         for x in self.bears:
             if len(self.fish) >= 5:
-                for x in range(0,2):
+                for x in range(0, 2):
                     self.fish.pop(x)
-        print(self.fish)
         return None
-    
 
     def check_hunger(self):
         """Removes the bears with a hunger score of 0."""
-
-
         starving_bears_list: list[Bear] = []
-
 
         for x in starving_bears_list:
             if Bear.hunger_score < 0:
                 starving_bears_list.pop(x)
-        
+
         self.bears = starving_bears_list
-
         return None
         
-    
     def repopulate_fish(self):
-        """Repopulates fish"""
+        """Repopulates fish."""
         n: int = len(self.bears)
-        x: int = n//2
+        x: int = n // 2
         y: int = 0
-
-        while y <= x:
-            self.bears.append(Bear)
-            y += 1
+        
+        while y <= x: 
+            for animal in self.bears:
+                self.bears.append(animal)
+                y += 1
         return None
-    
 
     def repopulate_bears(self):
-        """Repopulates bears"""
+        """Repopulates bears."""
         n: int = len(self.fish)
-        x: int = ((n//2) * 4)
+        x: int = ((n // 2) * 4)
         y: int = 0
-
-        while y <= x:
-            self.bears.append(Bear)
-            y += 1
+        
+        while y <= x: 
+            for animal in self.fish:
+                self.fish.append(animal)
+                y += 1
         return None
-    
 
     def view_river(self,):
-        """Shows current river stats"""
+        """Shows current river stats."""
         y: int = len(self.fish)
         z: int = len(self.bears)
 
@@ -120,17 +108,16 @@ class River:
         print(f"Bear Population: {z}")
         return None
             
-
     def one_river_day(self):
-        """Simulate one day of life in the river"""
+        """Simulate one day of life in the river."""
         # Increase day by 1
         self.day += 1
         # Simulate one day for all Bears
         for x in self.bears:
-            Bear.one_day()
+            x.one_day()
         # Simulate one day for all Fish
         for y in self.fish:
-            Fish.one_day()
+            y.one_day()
         # Simulate Bear's eating
         self.bears_eating()
         # Remove hungry Bear's from River
@@ -145,20 +132,17 @@ class River:
         self.view_river()
 
 
+
     def one_river_week(self):
         """Calls one_river_day for a whole week."""
-        while self.day <= 7:
-            self.one_river_day()
-            self.day +=1
-        return None
+        self.one_river_day()
+        self.one_river_day()
+        self.one_river_day()
+        self.one_river_day()
+        self.one_river_day()
+        self.one_river_day()
+        self.one_river_day()
     
-
     def __str__(self) -> str:
         """Print a prettier string."""
         return f"[{self}]"
-    
-
-    def check_functions(self):
-        "Checking Print"
-        print(self.bears.__str__)
-        print(self.fish.__str__)
