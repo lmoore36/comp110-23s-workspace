@@ -74,7 +74,7 @@ class River:
         self.bears = starving_bears_list
         return None
         
-    def repopulate_fish(self):
+    def repopulate_bears(self):
         """Repopulates fish."""
         n: int = len(self.bears)
         x: int = n // 2
@@ -86,16 +86,17 @@ class River:
                 y += 1
         return None
 
-    def repopulate_bears(self):
+    def repopulate_fish(self):
         """Repopulates bears."""
-        n: int = len(self.fish)
-        x: int = ((n // 2) * 4)
+        adult_fish: int = len(self.fish)
+        baby_fish: int = ((adult_fish//2) * 4)
         y: int = 0
         
-        while y <= x: 
+        while y <= adult_fish: 
             for animal in self.fish:
                 self.fish.append(animal)
                 y += 1
+                print(len(self.fish))
         return None
 
     def view_river(self,):
