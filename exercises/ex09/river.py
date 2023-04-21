@@ -2,8 +2,11 @@
 
 __author__ = "730556876"
 
-from fish import Fish
-from bear import Bear
+from exercises.ex09.fish import Fish
+from exercises.ex09.bear import Bear
+
+# from fish import Fish
+# from bear import Bear
 
 
 class River:
@@ -52,20 +55,21 @@ class River:
         while x < amount:
             self.fish.pop(x)
             x += 1
-        
         return None
 
     def bears_eating(self):
         """Simulates bears eating."""
         for x in self.bears:
             if len(self.fish) >= 5:
-                for x in range(0, 2):
-                    self.fish.pop(x)
+                self.remove_fish(3)
+                Bear.eat
         return None
 
     def check_hunger(self):
         """Removes the bears with a hunger score of 0."""
         starving_bears_list: list[Bear] = []
+
+        starving_bears_list = self.bears
 
         for x in starving_bears_list:
             if Bear.hunger_score < 0:
@@ -131,8 +135,6 @@ class River:
         # Visualize River
         self.view_river()
 
-
-
     def one_river_week(self):
         """Calls one_river_day for a whole week."""
         self.one_river_day()
@@ -142,7 +144,3 @@ class River:
         self.one_river_day()
         self.one_river_day()
         self.one_river_day()
-    
-    def __str__(self) -> str:
-        """Print a prettier string."""
-        return f"[{self}]"

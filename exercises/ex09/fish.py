@@ -7,9 +7,10 @@ class Fish:
 
     def __init__(self):
         """Initializes river fish."""
+        self.age = 0
         return None
     
-    def one_day(self):
+    def one_day(self) -> int:
         """Simulates one day in the river."""
         self.age += 1
-        return None
+        return self.age
